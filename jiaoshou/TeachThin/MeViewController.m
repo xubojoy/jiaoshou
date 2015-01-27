@@ -39,8 +39,11 @@
 {
     [super viewWillAppear:YES];
     self.navigationController.navigationBarHidden = YES;
+    //获取未读消息数，此时并没有把self注册为SDK的delegate，读取出的未读数是上次退出程序时的
+    [self didUnreadMessagesCountChanged];
+#warning 把self注册为SDK的delegate
+    [[EaseMob sharedInstance].chatManager addDelegate:self delegateQueue:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadApplyView) name:@"applicationDidEnterBackground" object:nil];
-   
 }
 -(void)viewDidAppear:(BOOL)animated
 {
@@ -76,13 +79,25 @@
 #warning 此处处理好友请求信息
 #pragma mark - 此处处理好友请求
 
+// 统计未读消息数
+-(void)didUnreadMessagesCountChanged
+{
+    [self reloadApplyView];
+    [table reloadData];
+}
+
 #pragma mark - action
 
 - (void)reloadApplyView
 {
     
-    NSLog(@">>>>>>>>>>>>>>[[ApplyFriendControllerViewController shareController].dataArray count]>>>>>>>>>>>>>>>%ld",[[ApplyFriendControllerViewController shareController].dataArray count]);
-    NSInteger count = [[ManageVC sharedManage].userNameArr count]+[[ApplyFriendControllerViewController shareController].dataArray count];
+    NSArray *conversations = [[[EaseMob sharedInstance] chatManager] conversations];
+    NSInteger unreadCount = 0;
+    for (EMConversation *conversation in conversations) {
+        unreadCount += conversation.unreadMessagesCount;
+    }
+    NSLog(@">>>>>>>>>>>>>>unreadCount>>>>>>>>>>>>>>>%ld",unreadCount);
+    NSInteger count = [[ManageVC sharedManage].userNameArr count]+unreadCount;
     
     if (count == 0) {
         self.unapplyCountLabel.hidden = YES;
@@ -108,8 +123,6 @@
 {
     [self reloadApplyView];
 }
-
-
 - (UILabel *)unapplyCountLabel
 {
     if (_unapplyCountLabel == nil) {
@@ -125,6 +138,25 @@
     return _unapplyCountLabel;
 }
 
+#pragma mark - IChatManagerDelegate 好友变化
+
+- (void)didReceiveBuddyRequest:(NSString *)username
+                       message:(NSString *)message
+{
+    
+    
+    NSLog(@"66666666666666666666666666666666666666666666------:%@",username);
+    
+    
+    if (!username) {
+        return;
+    }
+    if (!message) {
+        message = [NSString stringWithFormat:@"%@ 添加你为好友", username];
+    }
+    NSMutableDictionary *dic = [NSMutableDictionary dictionaryWithDictionary:@{@"title":username, @"username":username, @"applyMessage":message, @"applyStyle":[NSNumber numberWithInteger:ApplyStyleFriend]}];
+    [[ApplyFriendControllerViewController shareController] addNewApply:dic];
+}
 
 -(void)setlayout
 {
