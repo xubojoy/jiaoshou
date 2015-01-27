@@ -10,6 +10,8 @@
 	<string>TeachThin</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
+		<key>16C59F50B55F58BAA40AE129471F54E386BB21EF</key>
+		<string>https://github.com/xubojoy/jiaoshou.git</string>
 		<key>1f4a984c-bbe9-6244-a649-6c7d12a64a7a</key>
 		<string>https://192.168.1.175/svn/jiaoshou2</string>
 	</dict>
@@ -17,6 +19,8 @@
 	<string>TeachThin.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
+		<key>16C59F50B55F58BAA40AE129471F54E386BB21EF</key>
+		<string>../../..</string>
 		<key>1f4a984c-bbe9-6244-a649-6c7d12a64a7a</key>
 		<string>../..</string>
 	</dict>
@@ -26,6 +30,14 @@
 	<string>1f4a984c-bbe9-6244-a649-6c7d12a64a7a</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>16C59F50B55F58BAA40AE129471F54E386BB21EF</string>
+			<key>IDESourceControlWCCName</key>
+			<string></string>
+		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.subversion</string>
