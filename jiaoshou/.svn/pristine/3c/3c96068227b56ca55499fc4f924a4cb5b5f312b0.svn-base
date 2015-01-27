@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>31FDB560-3EA6-4BF0-9516-01F45DBA4908</string>
+	<key>IDESourceControlProjectName</key>
+	<string>TeachThin</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>1f4a984c-bbe9-6244-a649-6c7d12a64a7a</key>
+		<string>https://192.168.1.175/svn/jiaoshou2</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>TeachThin.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>1f4a984c-bbe9-6244-a649-6c7d12a64a7a</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>1f4a984c-bbe9-6244-a649-6c7d12a64a7a</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.subversion</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>1f4a984c-bbe9-6244-a649-6c7d12a64a7a</string>
+			<key>IDESourceControlWCCName</key>
+			<string>jiaoshou2</string>
+		</dict>
+	</array>
+</dict>
+</plist>
