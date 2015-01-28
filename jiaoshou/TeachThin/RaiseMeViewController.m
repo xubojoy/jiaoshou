@@ -69,6 +69,7 @@
     [self.slider showPopUpView];
     [self.view addSubview:_slider];
     
+    self.slider.userInteractionEnabled = NO;
     
     UIButton *homeBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     homeBtn.frame = CGRectMake(VIEW_WEIGHT/2-25, VIEW_HEIGHT-60, 50, 50);

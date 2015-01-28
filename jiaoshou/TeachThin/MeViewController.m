@@ -248,7 +248,7 @@
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section;
 {
-    return 20;
+    return 15;
 }
 
 
@@ -259,7 +259,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section;
 {
     if (section==0) {
-        return 3;
+        return 4;
     }else if (section==1){
         return 2;
     }else
@@ -372,6 +372,7 @@
             if (indexPath.row ==0) {
                 cellimg.image = [UIImage imageNamed:@"row5"];
                 celltitle.text = @"退出登录";
+                cell.backgroundColor = [UIColor whiteColor];
             }
         }
             break;

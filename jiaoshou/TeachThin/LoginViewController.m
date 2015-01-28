@@ -277,6 +277,7 @@
     [tf2 resignFirstResponder];
     RegisterViewController * registervc = [[RegisterViewController alloc]init];
     [self.navigationController pushViewController:registervc animated:YES];
+   
 }
 //去掉输入的前后空格
 -(NSString *)removespace:(UITextField *)textfield {
