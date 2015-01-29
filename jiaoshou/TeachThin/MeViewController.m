@@ -69,10 +69,7 @@
     UIImageView * bgimgV =[[UIImageView alloc]init];
     bgimgV.frame = CGRectMake(0, 0, WIDTH_VIEW(self.view), HEIGHT_VIEW(self.view));
     bgimgV.image = [UIImage imageNamed:@"mebg"];
-    
     [self.view addSubview:bgimgV];
-    
-  
     [self setlayout];
     [self reloadApplyView];
 }
@@ -122,6 +119,7 @@
 - (void)reloadGroupView
 {
     [self reloadApplyView];
+    [table reloadData];
 }
 - (UILabel *)unapplyCountLabel
 {
@@ -143,11 +141,7 @@
 - (void)didReceiveBuddyRequest:(NSString *)username
                        message:(NSString *)message
 {
-    
-    
     NSLog(@"66666666666666666666666666666666666666666666------:%@",username);
-    
-    
     if (!username) {
         return;
     }
@@ -165,9 +159,7 @@
     
     UIImageView * imgv1 = [[UIImageView alloc]initWithFrame:CGRectMake(10, 10, 21, 21)];
     imgv1.image = [UIImage imageNamed:@"setbtn"];
-  
-    
-    
+
     backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     backBtn.frame = CGRectMake(0, 20, WIDTH_VIEW(self.view)/6, 44);
     backBtn.backgroundColor = [UIColor clearColor];

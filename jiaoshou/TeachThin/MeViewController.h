@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MeViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
+@interface MeViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,IChatManagerDelegate>
 {
   
     //表格视图
